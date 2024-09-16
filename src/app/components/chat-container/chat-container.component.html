@@ -1,0 +1,25 @@
+<div class="flex flex-col h-screen bg-[#0B0B0B]">
+  <!-- Contenedor de Mensajes -->
+  <div class="flex-1 overflow-y-auto relative">
+    <app-chat-messages [messages]="messages"></app-chat-messages>
+  </div>
+
+  
+
+  <!-- Input del chat -->
+  <div class="p-4 bg-[#0B0B0B] relative z-10">
+    <div class="flex items-center border border-[#2E303D] bg-secondary rounded-2xl">
+      <input
+        type="text"
+        [(ngModel)]="inputValue"
+        class="flex-1 p-5 bg-secondary text-white border-none focus:outline-none rounded-l-2xl"
+        placeholder="Escribe un mensaje..."
+      />
+      <button (click)="handleSendMessage()" class="p-5 bg-secondary text-white rounded-r-2xl flex items-center justify-center">
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-[#606376] hover:fill-terciary">
+          <path d="M23.37 3.58137C23.946 1.98804 22.402 0.444039 20.8087 1.02137L1.33536 8.06404C-0.263303 8.64271 -0.456637 10.824 1.01403 11.676L7.23003 15.2747L12.7807 9.72404C13.0322 9.48116 13.369 9.34677 13.7186 9.34981C14.0682 9.35284 14.4026 9.49307 14.6498 9.74028C14.897 9.98749 15.0372 10.3219 15.0403 10.6715C15.0433 11.0211 14.9089 11.3579 14.666 11.6094L9.11536 17.16L12.7154 23.376C13.566 24.8467 15.7474 24.652 16.326 23.0547L23.37 3.58137Z" />
+        </svg>
+      </button>    
+    </div>
+  </div>
+</div>

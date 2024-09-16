@@ -1,0 +1,12 @@
+<div class="flex-1 overflow-y-auto p-4 space-y-4">
+  <div *ngFor="let message of messages" class="flex items-center space-x-2" [ngClass]="getAlignmentClass(message.sender)">
+    <!-- Imagen de perfil solo para el otro remitente -->
+    <img *ngIf="message.sender !== 'yo'" src="assets/iconoPerfil.svg" alt="profile" class="w-10 h-10 rounded-full object-cover">
+
+    <!-- Contenedor del mensaje -->
+    <div class="p-4 rounded-lg break-words w-fit min-w-[8%] max-w-[70%] space-y-2" [ngClass]="getMessageClass(message.sender)">
+      <p>{{ message.text }}</p>
+      <span class="text-xs text-gray-500 block">{{ message.time }}</span>
+    </div>
+  </div>
+</div>
